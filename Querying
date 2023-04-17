@@ -1,0 +1,98 @@
+MS SQL Server Introduction
+How to make a new database in MS SS 2014
+• Create an Online Banking system Database using MS SQL Server (Using HW1 ER Diagram)
+•	Views and their definition
+•	How to create tables with keys in MS SS 2014
+•	How to provision tuples
+•	How to create queries and results
+How to make a new database in MS SS 2014
+•	 With writing query
+
+1.	 Choose ‘New Query’ from the toolbar
+2.	A new window for writing queries will be opened
+3.	In the window we can write the following query: 	
+Create database DATABASE_NAME
+4.	Execute the query using ‘! Execute’ from the toolbar or press F5
+5.	New database will be generated in the databases folder.
+ 
+Steps in creating a table with columns in a database
+1.	After creating the database, right-click on tables to create tables.
+2.	We have about 17 tables for the online banking system.
+3.	Each time in creating a column data type should be given.
+4.	We can also insert NULL values but to be avoided.
+ 
+Using Queries in making a table with columns
+CREATE TABLE dbo.Table1  
+(  
+    Customer_ID  varchar  NOT NULL  
+    , Age int  NOT NULL  
+    , int NULL  
+    ,UnitPrice money NULL  
+    ,OrderQty smallint NULL  
+    ,ReceivedQty float NULL  
+    ,RejectedQty float NULL  
+    ,DueDate datetime NULL  
+);
+Creating Tuples in a database using MS SQL Server
+Creating tuples in Ms SQL Server using general method without using Queries.
+By right clicking on the table to be edited, and click on edit top 200 Rows.
+Edit the table rows.
+We can also insert queries into the table using queries.
+   Add/Remove/Update tuples in MS SS 2014 using Query
+Inserting tuples into the table using queries.
+Query to create tuples:
+ 
+ 
+SQL Server DML commands with examples:
+Update:
+This command will update existing records within a table.
+Query syntax::
+UPDATE [Table_Name] 
+SET [Column 1] = [Value1], 
+  [Column 2] = [Value2],
+  [Column N] = [ValueN]
+WHERE Condition;
+ 
+QL DELETE STATEMENT:
+The SQL DELETE Statement deletes one or more existing records from a table or a view
+Query syntax:
+DELETE FROM [Table_Name]  WHERE Condition;
+Example:
+
+ 
+
+Making a query and displaying the result
+1- Click on the ‘New Query’ on the taskbar
+2- A new window for writing query will be opened
+3- Write your query
+4- For running query, click on ‘Execute’ on the taskbar.
+•	See the image:
+5- After Executing result will show up,
+     Depending on the query. 
+•	See next slide for different queries
+ 
+Making a query and displaying the result
+SELECT statements are used to retrieve data from a single table or multiple tables.
+This syntax summary has been simplified as the five main clauses of the SELECT statement: SELECT, FROM, WHERE, ORDER BY, and LIMIT.  The SELECT clause is always the first clause in a SELECT statement. It identifies the columns in the result set. These columns are retrieved from the base tables named in the FROM clause. The ORDER BY clause determines how the rows in the result set are sorted, and the WHERE clause determines which rows in the base table are included in the result set. The WHERE clause specifies a search condition that's used to filter the rows in the base table. When this condition is true, the result set includes the row.  The LIMIT clause limits the number of rows in the result set.
+Retrieve data from two or more table
+Code inner join               
+SELECT invoice_number, vendor_name
+FROM vendors 
+INNER JOIN invoices 
+ON vendors.vendor_ id = invoices.vendor_ id 
+ORDER BY invoice_number
+ 
+An inner join that uses table aliases
+SELECT invoice_ number, vendor_ name, invoice_ due_date, invoice_ total - payment_ total - credit total AS balance_due 
+FROM vendors v JOIN invoices i 
+ON v.vendor_ id = i.vendor_ id 
+WHERE invoice_ total - payment_ total - credit total> 0 
+ORDER BY invoice_ due_ date DESC 
+ 
+A statement that joins four tables
+SELECT vendor_name, invoice_number, invoice_ date, line_ item_ amount, account_ description 
+FROM vendors v JOIN invoices i ON v.vendor_ id = i.vendor_ id JOIN invoice_ line_ items li ON i.invoice_ id = li.invoice_ id 
+JOIN general_ ledger_ accounts gl ON li. account_ number = gl. account_n11mher 
+WHERE invoice_ total - payment_ total - credit_ total > 0 
+ORDER BY vendor_name, line_ item_amount DESC
+ 
