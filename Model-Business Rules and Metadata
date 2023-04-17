@@ -1,1 +1,74 @@
+##An online banking system is that provides financial services for us. These systems are responsible for operating a payment system, providing loans, taking deposits. Different types of bank accounts can serve different purposes, depending on your needs. We have designed a database based on the user needs for an organization to regulate. 
+These are some of the common types of Attributes:
+Checking accounts
+Customer Details
+Employee details 
+Bank Branch
+Savings accounts
+Money market accounts 
+Loan Account
+Account details
+Metadata :
+Account Dimensions:  User information and Account details of online Banking system
+Account ID INT PRIMARY KEY NOT NULL
+Account Number INT PRIMARY KEY NOT NULL
+Account User ID INT FOREIGN KEY NOT NULL
+Account Password INT NOT NULL
+Account Date INT NOT NULL
+Account Address VARCHAR (25) NOT NULL
+Saving Account: Savings account Interest rate and Limit
+Interest Rates INT NOT NULL
+Overdraft limits INT NOT NULL
+Customer Dimensions: Customer details
+Customer Key INT PRIMARY KEY NOT NULL
+Customer Name VARCHAR (25) PRIMARY KEY NOT NULL
+Customer Date of Birth NOT NULL
+Employee: Executive data 
+Employee Name VARCHAR (25) NOT NULL
+Employee ID INT PRIMARY KEY NOT NULL
+Department Name VARCHAR (20) NOT NULL
+continuation….
 
+Customer Demographics Dimensions:
+Customer Demographics Key
+Customer Age Band NULL
+Customer Income Band NULL
+Customer Marital Status NULL
+Customer Risk Profile Dimension:
+Customer Risk INT PRIMARY KEY NOT NULL
+Customer Risk Cluster INT NOT NULL
+Customer Delinquency Cluster INT NOT NULL
+Loan Dimension:
+loan-number INT PRIMARY KEY NOT NULL
+Amount INT NOT NULL
+Transactions:
+Transaction_ID INT PRIMARY KEY NOT NULL
+Customer_ID INT FOREIGN KEY NOT NULL
+Transaction_Name VARCHAR (20) NOT NULL
+Transaction_Date  NOT NULL
+
+Branch_ID
+Branch_KEY  INT  PRIMARY KEY NOT NULL
+customer _key  INT  PRIMARY KEY NOT NULL
+Account_ID
+Product_Key  INT  PRIMARY KEY NOT NULL
+Account_ID  INT  PRIMARY KEY NOT NULL
+Branch Dimension:  Table name Branch, with the following attribute
+Branch Key INT PRIMARY KEY NOT NULL
+Branch Number INT NOT NULL
+Branch Address Attributes VARCHAR (25) NOT NULL
+Product Dimension:
+Product Key INT PRIMARY KEY NOT NULL
+Product Code INT NOT NULL
+Product Description VARCHAR (30) NOT NULL
+Employee_Department_ID
+Employee_ID INT  PRIMARY KEY NOT NULL
+Department Key  INT  PRIMARY KEY NOT NULL
+Account Status Dimension
+Account Status Key INT PRIMARY KEY NOT NULL
+Account Status Description VARCHAR (25) NOT NULL
+Account Status VARCHAR (25) NOT NULL
+Checking Account
+Minimum Balances INT NOT NULL
+Overdraft limits INT NOT NULL
+Service Charges INT NOT NULL
